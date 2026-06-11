@@ -44,6 +44,7 @@ requirements-tuning.txt
 requirements-vendor-research.txt
 scripts/*
 !scripts/validate_final_image.ps1
+!scripts/round1_json_runner.py
 tests/*
 !tests/test_cpu_portable.py
 !tests/test_official_autorun_v6.py
