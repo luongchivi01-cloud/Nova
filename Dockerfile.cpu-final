@@ -1,0 +1,39 @@
+# syntax=docker/dockerfile:1.7
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app/src \
+    OFFICIAL_AUTORUN=1 \
+    CPU_PORTABLE=1 \
+    FORCE_CPU=1 \
+    N_GPU_LAYERS=0 \
+    LLM_BACKEND=llama_cpp \
+    MODELS_DIR=/models \
+    ENABLE_NETWORK=0 \
+    STRICT_NO_FALLBACK=1 \
+    REQUIRE_MODEL=1 \
+    ALLOW_HEURISTIC=0 \
+    USE_VNCORENLP=0 \
+    ENABLE_RAG=0 \
+    USE_KNOWLEDGE_ENGINE=0 \
+    KNOWLEDGE_REQUIRED=0 \
+    ENABLE_VENDOR_RAG_FUSION=0 \
+    LLAMA_N_THREADS=8 \
+    LLAMA_N_THREADS_BATCH=12 \
+    LLAMA_N_BATCH=512 \
+    LLAMA_N_UBATCH=256 \
+    N_CTX=1024
+
+WORKDIR /app
+
+RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir \
+      --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu \
+      llama-cpp-python==0.3.28
+
+COPY src/ ./src/
+COPY README.md METHOD.md ./
+COPY --from=modelsrc / /models/
+
+ENTRYPOINT ["python", "-m", "hackai_mcq.cli"]

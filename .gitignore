@@ -1,0 +1,32 @@
+# Runtime and generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+output/
+reports/
+validation_run_*
+
+# Models and datasets must not be committed
+models/
+models_submission/
+*.gguf
+*.bin
+data/
+knowledge/
+corpus/
+
+# Vendored research repositories are not used by the final image
+third_party/
+
+# Local secrets and tooling
+.env
+*.log
+*.zip
+*.zip.part*
+cookies.txt
+cookie.json
+session.json
+storage_state.json
+.idea/
+.vscode/
