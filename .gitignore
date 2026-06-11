@@ -6,6 +6,7 @@ __pycache__/
 output/
 reports/
 validation_run_*
+round1/
 
 # Models and datasets must not be committed
 models/

@@ -44,6 +44,10 @@ The official CPU path is deliberately narrow:
 The model is embedded in the Docker image. The judge does not need a model
 mount or a network connection.
 
+The exact model source, size, and SHA-256 checksum are recorded in
+`MODEL_NOTICE.md`. Third-party licenses and attribution are recorded in
+`THIRD_PARTY_NOTICES.md` and `licenses/`.
+
 ## 4. Model selection decision
 
 The agreed selection rule allowed a 4B model only if it was at least 1.7 times
@@ -56,8 +60,9 @@ updated. No other approved labeled benchmark was available to prove that the
 4B model met the accuracy threshold. The conservative selection rule therefore
 kept Qwen3.5-9B Q4_K_M.
 
-The public test was used only for runtime and output-format validation. Its
-answers were not asserted, trained on, or hard-coded.
+The public test was used only as unlabeled inference input and for runtime and
+output-format validation. Its answers were not supplied, asserted, trained on,
+or hard-coded.
 
 ## 5. RAG decision
 
@@ -106,12 +111,8 @@ times with `--network none`. Every run:
 - produced only answers in `A/B/C/D`;
 - required no GPU, CUDA, network, API, or external model mount.
 
-Published manifest:
-
-```text
-linux/amd64
-sha256:ffcbeeb9a600f6f4820dc01868b2af6ee7d2024fd1f4a929a0a155daec8c380a
-```
+The published manifest targets `linux/amd64`. The final digest is recorded in
+`SUBMISSION.md` after the pushed image is pulled and validated.
 
 ## 8. Reproduction
 

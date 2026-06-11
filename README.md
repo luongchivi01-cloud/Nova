@@ -10,11 +10,18 @@ Innovator.
 - Platform: `linux/amd64`
 - Runtime: CPU-only `llama-cpp-python`
 - Model: self-contained Qwen3.5-9B Q4_K_M GGUF
-- Published digest:
-  `sha256:ffcbeeb9a600f6f4820dc01868b2af6ee7d2024fd1f4a929a0a155daec8c380a`
 
 The submitted image requires no GPU, CUDA, runtime network, external API, or
 external model mount.
+
+## Round 1 leaderboard
+
+The Round 1 website accepts a prediction CSV generated from the organizer's
+public-test JSON. The Docker image and repository are retained for
+reproducibility and later/private evaluation requirements.
+
+The generated prediction CSV and organizer dataset are intentionally not
+committed to GitHub.
 
 ## Competition contract
 
@@ -62,8 +69,9 @@ Run the complete three-pass validation:
 powershell -ExecutionPolicy Bypass -File scripts/validate_final_image.ps1
 ```
 
-The public test is used only for runtime and format validation. No expected
-answer sequence is asserted.
+The public test is used only as unlabeled inference input and for runtime and
+format validation. No labels, expected-answer assertions, or fixed answer
+sequence are used.
 
 ## CPU solver design
 
@@ -97,3 +105,9 @@ multi-gigabyte. It is included in the published Docker image.
 
 See [METHOD.md](METHOD.md) for model selection, solver design, dependency
 decisions, and final validation results.
+
+## Licensing and provenance
+
+- [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
+- [MODEL_NOTICE.md](MODEL_NOTICE.md)
+- [INTELLECTUAL_PROPERTY.md](INTELLECTUAL_PROPERTY.md)

@@ -1,17 +1,19 @@
-# Round 1 Submission
+# Submission Artifacts
 
-## Required links
+## Reproducibility artifacts
 
 - Docker Hub: https://hub.docker.com/r/viape/hackaithon-c/tags
 - Final image: `viape/hackaithon-c:v9-3-final`
 - GitHub: https://github.com/luongchivi01-cloud/Nova
-- Method document: https://github.com/luongchivi01-cloud/Nova/blob/main/METHOD.md
+- Method: https://github.com/luongchivi01-cloud/Nova/blob/main/METHOD.md
+- Third-party notices:
+  https://github.com/luongchivi01-cloud/Nova/blob/main/THIRD_PARTY_NOTICES.md
 
 ## Final image identity
 
 ```text
 Platform: linux/amd64
-Digest: sha256:ffcbeeb9a600f6f4820dc01868b2af6ee7d2024fd1f4a929a0a155daec8c380a
+Digest: sha256:66472c3724c6be5eecf2acf78741c76e42ad63587611cf01f670da111b3af34e
 ```
 
 ## Submission checklist
@@ -24,9 +26,11 @@ Digest: sha256:ffcbeeb9a600f6f4820dc01868b2af6ee7d2024fd1f4a929a0a155daec8c380a
 - [x] All answers are constrained to `A/B/C/D`.
 - [x] GitHub contains source code and reproduction instructions.
 - [x] Method document describes the final submitted runtime.
-- [ ] Team registration and links submitted at http://hackaithon.vsds.vn.
+- [x] Third-party model and runtime notices are included.
+- [x] Full Round 1 prediction CSV has passed strict local validation.
 
 ## Notes for organizers
 
-The public test is used only as a smoke test for runtime and CSV format. The
-submission contains no fixed public-answer assertion or answer sequence.
+The public test is used as unlabeled inference input and for runtime and CSV
+format validation. The submission contains no supplied labels, fixed
+public-answer assertion, or hard-coded answer sequence.

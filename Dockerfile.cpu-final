@@ -33,7 +33,8 @@ RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel && \
       llama-cpp-python==0.3.28
 
 COPY src/ ./src/
-COPY README.md METHOD.md ./
+COPY README.md METHOD.md THIRD_PARTY_NOTICES.md MODEL_NOTICE.md INTELLECTUAL_PROPERTY.md ./
+COPY licenses/ ./licenses/
 COPY --from=modelsrc / /models/
 
 ENTRYPOINT ["python", "-m", "hackai_mcq.cli"]
