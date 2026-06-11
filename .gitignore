@@ -30,3 +30,20 @@ session.json
 storage_state.json
 .idea/
 .vscode/
+
+# Legacy/local-only project files not included in the final public package
+.dockerignore
+Dockerfile
+Dockerfile.bak
+Dockerfile.cpu-runtime
+Dockerfile.selfcontained
+requirements.txt
+requirements-llm-transformers.txt
+requirements-rag.txt
+requirements-tuning.txt
+requirements-vendor-research.txt
+scripts/*
+!scripts/validate_final_image.ps1
+tests/*
+!tests/test_cpu_portable.py
+!tests/test_official_autorun_v6.py
