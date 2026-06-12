@@ -46,6 +46,8 @@ requirements-vendor-research.txt
 scripts/*
 !scripts/validate_final_image.ps1
 !scripts/round1_json_runner.py
+!scripts/round1_v2_runner.py
 tests/*
 !tests/test_cpu_portable.py
 !tests/test_official_autorun_v6.py
+!tests/test_round1_v2_runner.py
